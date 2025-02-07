@@ -22,8 +22,10 @@ const LoginPage = () => {
       const endpoint = isLogin ? '/auth/login' : '/auth/signup';
       const response = await axios.post(`${API_URL}${endpoint}`, { email, password });
 
-      localStorage.setItem('token', response.data.access_token); // Stockage du token dans le localStorage
-      localStorage.setItem('user_id', response.data.user_id); // Stockage du token dans le localStorage
+      if(isLogin){
+        localStorage.setItem('token', response.data.access_token); // Stockage du token dans le localStorage
+        localStorage.setItem('user_id', response.data.user_id); // Stockage du token dans le localStorage
+      }
 
       // Redirection après connexion ou inscription
       window.location.href = '/'; // Redirige vers la page d'accueil après la déconnexion
