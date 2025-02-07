@@ -1,10 +1,19 @@
 import { Injectable } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import axios from 'axios'; 
 
 @Injectable()
 export class TmdbService {
-  private readonly apiKey: string = process.env.TMDB_API_KEY || "";
+  private readonly apiKey: string;
   private readonly apiUrl: string = 'https://api.themoviedb.org/3';
+
+  constructor(private configService: ConfigService) {
+    const apiKey = this.configService.get<string>('TMDB_API_KEY');
+    if (!apiKey) {
+      throw new Error('TMDB_API_KEY is not defined');
+    }
+    this.apiKey = apiKey;
+  }
 
   async getPopularMovies() {
     const response = await axios.get(`${this.apiUrl}/movie/popular`, {
