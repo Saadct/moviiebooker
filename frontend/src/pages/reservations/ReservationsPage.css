@@ -1,0 +1,35 @@
+.reservations-container {
+    padding: 20px;
+  }
+  
+  .reservations-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .reservation-item {
+    background: #f9f9f9;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .cancel-btn {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #e60000;
+  }
+  
+  .error-message {
+    color: red;
+    margin: 10px 0;
+  }
+  

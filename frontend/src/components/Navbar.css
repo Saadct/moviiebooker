@@ -1,0 +1,39 @@
+/* Style de base de la navbar */
+.navbar-list {
+    list-style-type: none;
+    display: flex;
+    gap: 20px; /* Espacement entre les éléments */
+    align-items: center; /* Centrer verticalement les éléments */
+    margin: 0; /* Annuler les marges par défaut */
+    padding: 0; /* Annuler les paddings par défaut */
+  }
+  
+  /* Style de chaque élément de la navbar */
+  .navbar-item {
+    text-decoration: none; /* Supprimer le soulignement du lien */
+    color: #333; /* Couleur du texte */
+    font-size: 16px; /* Taille de police */
+    padding: 10px 15px; /* Ajouter du padding pour les liens */
+    background: none; /* Pas de fond */
+    border: none; /* Pas de bordure */
+    cursor: pointer; /* Curseur de type main */
+    display: inline-block; /* Assurer que tous les éléments se comportent comme des blocs en ligne */
+  }
+  
+  /* Appliquer un style au survol */
+  .navbar-item:hover {
+    color: #007bff; /* Changer la couleur au survol */
+    background-color: rgba(0, 123, 255, 0.1); /* Ajouter un léger fond */
+  }
+  
+  /* S'assurer que le bouton "Déconnexion" a le même comportement */
+  .navbar-item:focus {
+    outline: none; /* Retirer le contour de focus */
+  }
+  
+  /* Éviter le comportement de bloc pour les boutons */
+  button.navbar-item {
+    all: unset; /* Réinitialise tous les styles par défaut du bouton */
+    cursor: pointer; /* Curseur de type main */
+  }
+  
