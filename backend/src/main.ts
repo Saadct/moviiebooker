@@ -20,6 +20,18 @@ async function bootstrap() {
     methods: 'GET,POST,PUT,DELETE',  
     allowedHeaders: 'Content-Type, Authorization',  
   });
+
+  app.enableCors({
+    origin: 'https://asaad.alwaysdata.net/',
+    methods: 'GET,POST,PUT,DELETE',  
+    allowedHeaders: 'Content-Type, Authorization',  
+  });
   await app.listen(3000);
+
+
+  await app.listen(3000);
+
+
 }
+
 bootstrap();
