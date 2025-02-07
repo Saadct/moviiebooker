@@ -81,13 +81,28 @@ const MoviesList = () => {
 
     try {
       const reservationDateTime = `${reservationDate}T${reservationTime}:00.000Z`;
+      const token = localStorage.getItem('token');
+        const user_id = localStorage.getItem('user_id');
 
-      const response = await axios.post(`${API}/reservations`, {
-        userId: userId,
-        movieId: selectedMovie.id,
-        movieName: selectedMovie.original_title,
-        reservationDateTime: reservationDateTime, 
-      });
+        if (!token || !user_id) {
+          navigate('/login'); 
+          return;
+        }
+    
+      const response = await axios.post(
+        `${API}/reservations`,
+        {
+          userId: userId,
+          movieId: selectedMovie?.id, // Vérifie que selectedMovie n'est pas undefined
+          movieName: selectedMovie?.original_title, // Ajoute une sécurité pour éviter une erreur si selectedMovie est undefined
+          reservationDateTime: reservationDateTime, 
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       console.log("Réservation effectuée :", response.data);
       setSelectedMovie(null); // Fermer le formulaire de réservation
