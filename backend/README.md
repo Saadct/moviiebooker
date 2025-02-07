@@ -116,5 +116,5 @@ GET /movies/searchPaginated?query=<titre>&page=<num>
 - Les rôles (`user`) sont gérés via des guards NestJS.
 
 ## Auteur
-Développé par [Ton Nom]
+Développé par Asaad
 
