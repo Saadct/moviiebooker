@@ -3,6 +3,9 @@
 ## Description
 Cette API permet aux utilisateurs de créer un compte, de s'authentifier, de rechercher des films et de réserver des séances.
 
+
+Swagger disponible à l'adresse du domain ou localhost / api
+
 ## Technologies Utilisées
 - NestJS
 - TypeScript
@@ -72,6 +75,7 @@ POST /reservations
   {
     "userId": "123",
     "movieId": "456",
+    "movieName": "sonic",
     "date": "2024-06-10"
   }
   ```
